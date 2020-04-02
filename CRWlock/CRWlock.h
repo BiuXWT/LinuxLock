@@ -4,10 +4,10 @@
 class CRWlock
 {
 private:
-    pthread_rwlock_t m_rwlock;
+    pthread_rwlock_t *m_rwlock;
 
 public:
-    CRWlock();
+    CRWlock( int shared=0,pthread_rwlock_t* lock=nullptr);
     ~CRWlock();
     int rdlock();
     int wrlock();
