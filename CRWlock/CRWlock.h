@@ -7,7 +7,7 @@ private:
     pthread_rwlock_t *m_rwlock;
 
 public:
-    CRWlock( int shared=0,pthread_rwlock_t* lock=nullptr);
+    CRWlock( int shared=0,pthread_rwlock_t** lock=nullptr);
     ~CRWlock();
     int rdlock();
     int wrlock();
